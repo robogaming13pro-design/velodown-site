@@ -75,7 +75,7 @@ form.addEventListener('submit',async e=>{
  submit.disabled=true; submit.textContent='Analyzing…';
  result.classList.add('show'); result.innerHTML='<h3>Connecting to VeloDown backend…</h3><p>Please wait.</p>';
  try {
-   const response=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:u.href})});
+   const response=await fetch('/.netlify/functions/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:u.href})});
    const data=await response.json();
    if(!response.ok || !data.ok) throw new Error(data.error || 'Backend request failed.');
    const safePlatform=escapeHtml(data.platform || 'Unknown platform');
