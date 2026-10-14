@@ -1,4 +1,3 @@
-
 const patterns = [
   ['YouTube', /(^|\.)youtube\.com$|(^|\.)youtu\.be$/i],
   ['Facebook', /(^|\.)facebook\.com$|(^|\.)fb\.watch$/i],
